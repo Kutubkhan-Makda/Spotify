@@ -1,5 +1,5 @@
 import { useRecoilState } from "recoil";
-import { currentTrackIdState } from "../atoms/songAtom";
+import { currentTrackIdState, isPlayingState } from "../atoms/songAtom";
 import useSpotify from "../hooks/useSpotify";
 import { millisToMinutsAndSecond } from "../lib/time";
 
@@ -7,6 +7,7 @@ function Song({order,track}) {
     const spotifyApi = useSpotify();
 
     const [currentTrackId,setCurrentTrackId] = useRecoilState(currentTrackIdState)
+    const [isPlaying,setIsPlaying] = useRecoilState(isPlayingState)
 
   return (
     <div className="grid grid-cols-2 text-gray-500 py-4 px-5 hover:bg-gray-900 rounded-lg cursor-pointer">
