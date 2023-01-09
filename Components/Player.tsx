@@ -16,7 +16,7 @@ function Player() {
   return (
     <div>
         <div>
-            <img src="" alt="" />
+            <img src={songInfo?.album.images?.[0]?.url} alt="" />
         </div>
     </div>
   )
