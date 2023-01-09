@@ -1,4 +1,5 @@
-import { RewindIcon, SwitchHorizontalIcon } from "@heroicons/react/outline";
+import { SwitchHorizontalIcon } from "@heroicons/react/outline";
+import { RewindIcon } from "@heroicons/react/solid";
 import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
 import { useRecoilState } from "recoil";
