@@ -1,4 +1,4 @@
-import { SwitchHorizontalIcon } from "@heroicons/react/outline";
+import { RewindIcon, SwitchHorizontalIcon } from "@heroicons/react/outline";
 import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
 import { useRecoilState } from "recoil";
@@ -40,7 +40,8 @@ function Player() {
             </div>
         </div>
         <div>
-          <SwitchHorizontalIcon className="w-5 h-5"/>
+          <SwitchHorizontalIcon className="button"/>
+          <RewindIcon className="button"/>
         </div>
     </div>
   )
