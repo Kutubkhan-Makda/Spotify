@@ -1,5 +1,5 @@
-import { SwitchHorizontalIcon } from "@heroicons/react/outline";
-import { RewindIcon } from "@heroicons/react/solid";
+import { HeartIcon,VolumeUpIcon as VolumeDownIcon } from "@heroicons/react/outline";
+import { RewindIcon,SwitchHorizontalIcon,FastForwardIcon,PauseIcon,PlayIcon,ReplyIcon,VolumeUpIcon } from "@heroicons/react/solid";
 import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
 import { useRecoilState } from "recoil";
@@ -40,9 +40,12 @@ function Player() {
               <p>{songInfo?.artists?.[0]?.name}</p>
             </div>
         </div>
-        <div>
+        <div className="flex items-center justify-evenly">
           <SwitchHorizontalIcon className="button"/>
           <RewindIcon className="button"/>
+          {isPlaying?
+          (<PauseIcon className="button w-10 h-10"/>):
+          (<PauseIcon className="button w-10 h-10"/>)}
         </div>
     </div>
   )
