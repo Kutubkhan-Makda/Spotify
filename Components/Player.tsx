@@ -26,7 +26,11 @@ function Player() {
     const handlePlayPause = ()=> {
       spotifyApi.getMyCurrentPlaybackState().then((data)=>{
         if(data.body.is_playing){
-          
+          spotifyApi.pause();
+          setIsPlaying(false);
+        }else{
+          spotifyApi.play();
+          setIsPlaying(true);
         }
       })
     }
@@ -56,6 +60,9 @@ function Player() {
           (<PlayIcon className="button w-10 h-10" onClick={handlePlayPause}/>)}
           <FastForwardIcon className="button"/>
           <ReplyIcon className="button"/>
+        </div>
+        <div>
+          
         </div>
     </div>
   )
