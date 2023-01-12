@@ -46,6 +46,8 @@ function Player() {
           {isPlaying?
           (<PauseIcon className="button w-10 h-10"/>):
           (<PauseIcon className="button w-10 h-10"/>)}
+          <FastForwardIcon className="button"/>
+          <ReplyIcon className="button"/>
         </div>
     </div>
   )
