@@ -62,7 +62,9 @@ function Player() {
           <ReplyIcon className="button"/>
         </div>
         <div>
-          
+          <VolumeDownIcon className="button"/>
+          <input type="range" value="" />
+          <VolumeUpIcon className="button"/>
         </div>
     </div>
   )
