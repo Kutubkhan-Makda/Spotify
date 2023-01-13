@@ -45,7 +45,7 @@ function Player() {
 
     useEffect(()=>{
       if(volume>0 && volume<100){
-        debounce
+        debounceAdjustVolume(volume);
       }
     },[volume])
 
