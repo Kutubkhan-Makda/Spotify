@@ -62,9 +62,9 @@ function Player() {
           <ReplyIcon className="button"/>
         </div>
         <div className="flex items-center space-x-3 md:space-x-4 justify-end pr-5">
-          <VolumeDownIcon className="button"/>
-          <input type="range" value={volume} min={0} max={100} className='w-14 md:w-28'/>
-          <VolumeUpIcon className="button"/>
+          <VolumeDownIcon className="button" onClick={()=>volume>0 && setVolume(volume-10)}/>
+          <input type="range" value={volume} onChange={e=>setVolume(Number(e.target.value))} min={0} max={100} className='w-14 md:w-28'/>
+          <VolumeUpIcon className="button" onClick={()=>volume<100 && setVolume(volume+10)}/>
         </div>
     </div>
   )
