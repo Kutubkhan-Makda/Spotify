@@ -61,9 +61,9 @@ function Player() {
           <FastForwardIcon className="button"/>
           <ReplyIcon className="button"/>
         </div>
-        <div>
+        <div className="flex items-center space-x-3 md:space-x-4 justify-end pr-5">
           <VolumeDownIcon className="button"/>
-          <input type="range" value="" />
+          <input type="range" value={volume} min={0} max={100} className='w-14 md:w-28'/>
           <VolumeUpIcon className="button"/>
         </div>
     </div>
