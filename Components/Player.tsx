@@ -3,6 +3,7 @@ import { RewindIcon,SwitchHorizontalIcon,FastForwardIcon,PauseIcon,PlayIcon,Repl
 import { useSession } from "next-auth/react";
 import { useCallback, useEffect, useState } from "react";
 import { useRecoilState } from "recoil";
+import { debounce } from 'lodash'
 import { currentTrackIdState, isPlayingState } from "../atoms/songAtom";
 import useSongInfo from "../hooks/useSongInfo";
 import useSpotify from "../hooks/useSpotify";
@@ -44,7 +45,7 @@ function Player() {
     },[currentTrackId,spotifyApi,session])
 
     const debounceAdjustVolume = useCallback(
-      debounce
+      debounce((volume)=>{spotifyApi.setVolume(volume)},500),[]
     )
 
     useEffect(()=>{
