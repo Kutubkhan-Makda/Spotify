@@ -1,7 +1,7 @@
 import { HeartIcon,VolumeUpIcon as VolumeDownIcon } from "@heroicons/react/outline";
 import { RewindIcon,SwitchHorizontalIcon,FastForwardIcon,PauseIcon,PlayIcon,ReplyIcon,VolumeUpIcon } from "@heroicons/react/solid";
 import { useSession } from "next-auth/react";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useRecoilState } from "recoil";
 import { currentTrackIdState, isPlayingState } from "../atoms/songAtom";
 import useSongInfo from "../hooks/useSongInfo";
@@ -42,6 +42,10 @@ function Player() {
         setVolume(50);
       }
     },[currentTrackId,spotifyApi,session])
+
+    const debounceAdjustVolume = useCallback(
+      debounce
+    )
 
     useEffect(()=>{
       if(volume>0 && volume<100){
