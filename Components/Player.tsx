@@ -45,7 +45,7 @@ function Player() {
     },[currentTrackId,spotifyApi,session])
 
     const debounceAdjustVolume = useCallback(
-      debounce((volume)=>{spotifyApi.setVolume(volume)},500),[]
+      debounce((volume)=>{spotifyApi.setVolume(volume).catch((err)=>{})},500),[]
     )
 
     useEffect(()=>{
